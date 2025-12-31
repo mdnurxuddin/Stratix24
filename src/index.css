@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark premium theme */
+    --background: 240 10% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Custom Magenta accent #d244cd */
+    --primary: 302 63% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 302 63% 68%;
+
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 340 82% 52%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(302, 63%, 55%),
+      hsl(260, 70%, 50%)
+    );
+    --gradient-text: linear-gradient(
+      90deg,
+      hsl(302, 63%, 60%),
+      hsl(260, 70%, 60%)
+    );
+    --shadow-glow: 0 0 60px hsl(302 63% 55% / 0.3);
+    --shadow-card: 0 20px 40px hsl(0 0% 0% / 0.3);
+
+    /* Typography */
+    --font-display: "Clash Display", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+
+    /* Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-spring: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Cursor */
+    --cursor-size: 12px;
+    --cursor-circle-size: 40px;
+  }
+
+  .dark {
+    --background: 240 10% 6%;
+    --foreground: 0 0% 95%;
+  }
+}
+
+/* Clash Display font face */
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://fonts.cdnfonts.com/s/65198/ClashDisplay-Bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://fonts.cdnfonts.com/s/65198/ClashDisplay-Medium.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://fonts.cdnfonts.com/s/65198/ClashDisplay-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+@layer components {
+  /* Text gradient */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Outline text */
+  .text-outline {
+    -webkit-text-stroke: 2px hsl(var(--foreground));
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-outline-primary {
+    -webkit-text-stroke: 2px hsl(var(--primary));
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Magnetic element base */
+  .magnetic {
+    display: inline-block;
+    transition: var(--transition-spring);
+  }
+
+  /* Reveal animation base */
+  .reveal-up {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-up.revealed {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Hover scale container */
+  .hover-scale-container {
+    overflow: hidden;
+  }
+
+  .hover-scale-container img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-scale-container:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Service item styles */
+  .service-item {
+    border-bottom: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .service-item:hover {
+    background: hsl(var(--secondary));
+  }
+
+  .service-item .service-title {
+    -webkit-text-stroke: 1px hsl(var(--foreground));
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+  }
+
+  .service-item:hover .service-title {
+    -webkit-text-stroke: 0;
+    -webkit-text-fill-color: hsl(var(--primary));
+  }
+
+  /* Team card grayscale */
+  .team-card img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+
+  .team-card:hover img {
+    filter: grayscale(0%);
+  }
+
+  /* Footer text fill animation */
+  .footer-text {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) var(--fill-percentage, 0%),
+      transparent var(--fill-percentage, 0%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px hsl(var(--muted-foreground) / 0.3);
+    transition: --fill-percentage 0.1s linear;
+  }
+
+  /* Back to top progress */
+  .progress-circle {
+    stroke-dasharray: 283;
+    stroke-dashoffset: calc(283 - (283 * var(--scroll-progress, 0)));
+    transition: stroke-dashoffset 0.1s linear;
+  }
+
+  /* Split text animation helper */
+  .char {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .char.animated {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Image follower */
+  .image-follower {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .image-follower.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Slider styles */
+  .slider-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Nav link underline */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
