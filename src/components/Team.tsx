@@ -10,14 +10,14 @@ const founders = [
     id: 1,
     name: "Md Nur Uddin",
     role: "Founder & CEO",
-    image: "/public/linkedin.jpg",
+    image: "/linkedin.jpg",
     bio: "Mern Stack Developer And Visionary Leader",
   },
   {
     id: 2,
     name: "Minhaz Alom",
     role: "Co-Founder & CTO",
-    image: "/public/minhazalom.jpg",
+    image: "/minhazalom.jpg",
     bio: "Full Stack Developer And Tech Strategist",
   },
 ];
