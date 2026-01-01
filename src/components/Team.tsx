@@ -22,20 +22,20 @@ const founders = [
   },
 ];
 
-// const teamMembers = [
-//   {
-//     id: 3,
-//     name: "Mushfiqur Rahman Fahim",
-//     role: "Digital Marketing Specialist",
-//     image: "/public/mushfiqurrahmanfahim.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Ehsan Nafiz",
-//     role: "Mern Stack Developer",
-//     image: "/public/ehsannafiztanmoy.jpg",
-//   },
-// ];
+const teamMembers = [
+  {
+    id: 3,
+    name: "",
+    role: "",
+    image: "",
+  },
+  {
+    id: 4,
+    name: "",
+    role: "",
+    image: "",
+  },
+];
 
 const Team = () => {
   const sectionRef = useRef<HTMLElement>(null);
