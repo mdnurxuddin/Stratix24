@@ -7,35 +7,35 @@ const services = [
     title: "Web Development",
     description:
       "Turning complex ideas into robust, responsive, and lightning-fast web solutions tailored to meet your unique brand goals.",
-    image: "/public/web.jpg",
+    image: "/web.jpg",
   },
   {
     id: 2,
     title: "UI/UX",
     description:
       "Blending psychology with design to craft purposeful user experiences that simplify complex tasks and elevate the way people interact with your brand.",
-    image: "/public/uiuxx.jpg",
+    image: "/uiuxx.jpg",
   },
   {
     id: 3,
     title: "Commercial Design",
     description:
       "Transforming abstract concepts into stunning visual assets that enhance your brand's professional image across all digital and print platforms.",
-    image: "/public/design.jpg",
+    image: "/design.jpg",
   },
   {
     id: 4,
     title: "Digital Marketing",
     description:
       "Strategic campaigns that amplify your reach and drive measurable results.",
-    image: "/public/digi.jpg",
+    image: "/digi.jpg",
   },
   {
     id: 5,
     title: "Social Media Management",
     description:
       "Growing your digital footprint through strategic content planning, community engagement, and data-driven insights that build a loyal and active following for your brand.",
-    image: "/public/why.jpg",
+    image: "/why.jpg",
   },
 ];
 
