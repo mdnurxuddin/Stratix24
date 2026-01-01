@@ -22,20 +22,20 @@ const founders = [
   },
 ];
 
-const teamMembers = [
-  {
-    id: 3,
-    name: "",
-    role: "",
-    image: "",
-  },
-  {
-    id: 4,
-    name: "",
-    role: "",
-    image: "",
-  },
-];
+// const teamMembers = [
+//   {
+//     id: 3,
+//     name: "",
+//     role: "",
+//     image: "",
+//   },
+//   {
+//     id: 4,
+//     name: "",
+//     role: "",
+//     image: "",
+//   },
+// ];
 
 const Team = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -204,14 +204,14 @@ const Team = () => {
         </div>
 
         {/* Team Members - Grid of circles */}
-        <div className="team-grid grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {teamMembers.map((member) => (
+        {/* <div className="team-grid grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"> */}
+        {/* {teamMembers.map((member) => (
             <div
               key={member.id}
               className="team-member group text-center hover-target"
             >
               {/* Circular image with ring */}
-              <div className="relative mx-auto mb-5">
+        {/*} <div className="relative mx-auto mb-5">
                 <div className="w-28 h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden ring-2 ring-border ring-offset-4 ring-offset-background group-hover:ring-primary group-hover:ring-offset-primary/20 transition-all duration-500">
                   <img
                     src={member.image}
@@ -220,11 +220,11 @@ const Team = () => {
                   />
                 </div>
                 {/* Hover overlay */}
-                <div className="absolute inset-0 rounded-full bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-500 -z-10 blur-xl" />
+        {/*}  <div className="absolute inset-0 rounded-full bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-500 -z-10 blur-xl" />
               </div>
 
               {/* Info */}
-              <h4 className="font-display text-lg font-bold group-hover:text-primary transition-colors duration-300">
+        {/* <h4 className="font-display text-lg font-bold group-hover:text-primary transition-colors duration-300">
                 {member.name}
               </h4>
               <p className="text-muted-foreground text-sm mt-1">
